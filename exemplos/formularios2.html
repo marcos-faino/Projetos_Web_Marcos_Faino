@@ -7,6 +7,7 @@
     <title>Exemplo formulario 2</title>
 </head>
 <body>
+    <p><a href="../index.html">Voltar</a></p>
     <h2 style="text-align:center"> Segundo Exemplo Formulário </h2>
     
     <form>
@@ -38,7 +39,9 @@
                 <input type="tel" name="telefone" 
                        placeholder="(xx)xxxx-xxxx"
                        title="formato aceito (99)9999-9999" 
-                       pattern="\([0-9]{2}\)[0-9]{4}-[0-9]{4}">
+                       pattern="([0-9]{2})[0-9]{4}-[0-9]{4}"
+                       maxlength="13"
+                       id="tele">
             </td>
         </tr>
         <tr>
@@ -73,5 +76,15 @@
         
     </table>
     </form>
+    <script>
+        tele.onkeyup = function(){
+            let texto = tele.value;
+            if(texto.length === 2){
+                tele.value = "(" + texto + ")";
+            }else if(texto.length === 8){
+                tele.value = texto + "-";
+            }
+        };
+    </script>
 </body>
 </html>
