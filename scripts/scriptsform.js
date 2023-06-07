@@ -38,3 +38,11 @@ uf.onchange = function(){
         default : natural.innerHTML = 'Outros estados';
     }
 };
+
+
+senha.ontouch = digitou;
+senha.onkeyup = digitou;
+
+function digitou(e){
+    alert(e.keyCode);
+};
